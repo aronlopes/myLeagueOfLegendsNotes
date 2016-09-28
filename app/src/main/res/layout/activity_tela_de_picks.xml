@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.arondaniel.lolpickshelp.ChampionSelectionActivity">
+
+
+    <!--=============================================================-->
+    <!--=============================================================-->
+    <!-- A seguir o código dos 3 banimentos de campeões do lado azul -->
+    <!--=============================================================-->
+    <!--=============================================================-->
+    <!---<ImageView
+        android:layout_height="45dp"
+        android:layout_width="45dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/championBanBlue1"
+        android:layout_gravity="center"
+        android:onClick="searchChampion"
+        android:background="#ecdb59"
+        android:padding="2dp">
+    </ImageView>
+
+    <ImageView
+        android:layout_height="45dp"
+        android:layout_width="45dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/championBanBlue2"
+        android:layout_gravity="center"
+        android:onClick="searchChampion"
+        android:background="#ecdb59"
+        android:padding="2dp">
+    </ImageView>
+
+    <ImageView
+        android:layout_height="45dp"
+        android:layout_width="45dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/championBanBlue3"
+        android:layout_gravity="center"
+        android:onClick="searchChampion"
+        android:background="#ecdb59"
+        android:padding="2dp">
+    </ImageView> -->
+
+
+
+
+
+    <!--=================================================================-->
+    <!--=================================================================-->
+    <!-- A seguir o código dos 3 banimentos de campeões do lado vermelho -->
+    <!--=================================================================-->
+    <!--=================================================================-->
+    <!---<ImageView
+        android:layout_height="45dp"
+        android:layout_width="45dp"
+        android:layout_marginStart="375dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/championBanRed1"
+        android:layout_gravity="center"
+        android:onClick="searchChampion"
+        android:background="#ecdb59"
+        android:padding="2dp">
+    </ImageView>
+
+    <ImageView
+        android:layout_height="45dp"
+        android:layout_width="45dp"
+        android:layout_marginStart="430dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/championBanRed2"
+        android:layout_gravity="center"
+        android:onClick="searchChampion"
+        android:background="#ecdb59"
+        android:padding="2dp">
+    </ImageView>
+
+    <ImageView
+        android:layout_height="45dp"
+        android:layout_width="45dp"
+        android:layout_marginStart="485dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/championBanRed3"
+        android:layout_gravity="center"
+        android:onClick="searchChampion"
+        android:background="#ecdb59"
+        android:padding="2dp">
+    </ImageView>
+    -->
+
+
+
+
+
+    <!--==========================================================-->
+    <!--==========================================================-->
+    <!-- A seguir o código das 5 imagens de campeões do lado azul -->
+    <!--==========================================================-->
+    <!--==========================================================-->
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/championSelectedBlue1"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="170dp"
+        android:id="@+id/championSelectedBlue2"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="260dp"
+        android:id="@+id/championSelectedBlue3"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="350dp"
+        android:id="@+id/championSelectedBlue4"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="440dp"
+        android:id="@+id/championSelectedBlue5"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+
+    <!--==============================================================-->
+    <!--==============================================================-->
+    <!-- A seguir o código das 5 imagens de campeões do lado vermelho -->
+    <!--==============================================================-->
+    <!--==============================================================-->
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="450dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/championSelectedRed1"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="450dp"
+        android:layout_marginTop="170dp"
+        android:id="@+id/championSelectedRed2"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="450dp"
+        android:layout_marginTop="260dp"
+        android:id="@+id/championSelectedRed3"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="450dp"
+        android:layout_marginTop="350dp"
+        android:id="@+id/championSelectedRed4"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="450dp"
+        android:layout_marginTop="440dp"
+        android:id="@+id/championSelectedRed5"
+        android:onClick="searchChampion"
+        app:civ_shadow="false"
+        app:civ_border="false" />
+
+
+    <!--==============================================================-->
+    <!--==============================================================-->
+    <!--    A seguir o código dos 5 spinners com a seleção da lane dos-->
+    <!--    campeões.                                                 -->
+    <!--==============================================================-->
+    <!--==============================================================-->
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="100dp"
+        android:id="@+id/championLaneBlue1" />
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="190dp"
+        android:id="@+id/championLaneBlue2" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="280dp"
+        android:id="@+id/championLaneBlue3" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="370dp"
+        android:id="@+id/championLaneBlue4" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="460dp"
+        android:id="@+id/championLaneBlue5" />
+
+
+    <TextView
+        android:text="You should pick:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="530dp"
+        android:id="@+id/textShouldPick" />
+
+    <TextView
+        android:text="You should avoid:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:layout_marginLeft="350dp"
+        android:id="@+id/textShouldAvoid" />
+
+
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/picksGrid"
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="40dp"
+
+        android:columnWidth="90dp"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth" />
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/avoidGrid"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="300dp"
+        android:columnWidth="90dp"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth" />
+
+</RelativeLayout>
+
