@@ -1,9 +1,18 @@
 <resources>
+
+
     <string name="app_name">Lol Picks Help</string>
     <string name="search_hint">Procure um campeão</string>
     <string name="akali">Akali</string>
     <string name="ahri">Ahri</string>
     <string name="zilean">Zilean</string>
+
+    <!--========================================================-->
+    <!-- Strings contendo os nomes dos botões                   -->
+    <!--========================================================-->
+    <string name="pickSelection">Pick Selection</string>
+    <string name="makeANote">Make A Note</string>
+
 
     <!--========================================================-->
     <!-- Populando o array de lanes para utilizar no spinner    -->

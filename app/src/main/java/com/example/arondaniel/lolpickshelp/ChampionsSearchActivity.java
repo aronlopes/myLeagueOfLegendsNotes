@@ -18,14 +18,14 @@ public class ChampionsSearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_champions_search);
 
+        // Criando a gridview que irá exibir os campeões
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
 
+        // Declarando o listener
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-//                Toast.makeText(ChampionsSearchActivity.this, "" + position,
-//                        Toast.LENGTH_SHORT).show();
 
                 // Criando a string do campeão selecionado pelo usuário
                 String stringDoIcone = ChampionList.getItem(position).getName().toString() + "_icon";

@@ -15,7 +15,7 @@
     <!-- A seguir o código dos 3 banimentos de campeões do lado azul -->
     <!--=============================================================-->
     <!--=============================================================-->
-    <!---<ImageView
+    <ImageView
         android:layout_height="45dp"
         android:layout_width="45dp"
         android:layout_marginLeft="60dp"
@@ -23,7 +23,7 @@
         android:id="@+id/championBanBlue1"
         android:layout_gravity="center"
         android:onClick="searchChampion"
-        android:background="#ecdb59"
+        android:background="#000000"
         android:padding="2dp">
     </ImageView>
 
@@ -35,7 +35,7 @@
         android:id="@+id/championBanBlue2"
         android:layout_gravity="center"
         android:onClick="searchChampion"
-        android:background="#ecdb59"
+        android:background="#000000"
         android:padding="2dp">
     </ImageView>
 
@@ -47,9 +47,9 @@
         android:id="@+id/championBanBlue3"
         android:layout_gravity="center"
         android:onClick="searchChampion"
-        android:background="#ecdb59"
+        android:background="#000000"
         android:padding="2dp">
-    </ImageView> -->
+    </ImageView>
 
 
 
@@ -60,15 +60,16 @@
     <!-- A seguir o código dos 3 banimentos de campeões do lado vermelho -->
     <!--=================================================================-->
     <!--=================================================================-->
-    <!---<ImageView
+    <ImageView
         android:layout_height="45dp"
         android:layout_width="45dp"
         android:layout_marginStart="375dp"
+        android:layout_marginLeft="375dp"
         android:layout_marginTop="10dp"
         android:id="@+id/championBanRed1"
         android:layout_gravity="center"
         android:onClick="searchChampion"
-        android:background="#ecdb59"
+        android:background="#000000"
         android:padding="2dp">
     </ImageView>
 
@@ -76,11 +77,12 @@
         android:layout_height="45dp"
         android:layout_width="45dp"
         android:layout_marginStart="430dp"
+        android:layout_marginLeft="430dp"
         android:layout_marginTop="10dp"
         android:id="@+id/championBanRed2"
         android:layout_gravity="center"
         android:onClick="searchChampion"
-        android:background="#ecdb59"
+        android:background="#000000"
         android:padding="2dp">
     </ImageView>
 
@@ -88,14 +90,14 @@
         android:layout_height="45dp"
         android:layout_width="45dp"
         android:layout_marginStart="485dp"
+        android:layout_marginLeft="485dp"
         android:layout_marginTop="10dp"
         android:id="@+id/championBanRed3"
         android:layout_gravity="center"
         android:onClick="searchChampion"
-        android:background="#ecdb59"
+        android:background="#000000"
         android:padding="2dp">
     </ImageView>
-    -->
 
 
 

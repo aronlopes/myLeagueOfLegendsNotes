@@ -27,15 +27,17 @@ public class ChampionSelectionActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.arondaniel.lolpickshelp";
     public static final String CHAMPION_SELECTED_MESSAGE = "com.example.arondaniel.lolpickshelp";
 
-    public int BUTTON_SELECTED;
+
+    private int championViewIdSelected;
 
     // Create a string for the ImageView label
     private static final String IMAGEVIEW_TAG = "icon bitmap";
 
+    // TAG utilizada nos logs desta activity
     private static String TAG = "ChampionSelection";
 
     //Criando um objeto GestureDetector para capturar toque na tela e movimentos
-    MyGestureDetector detector = new MyGestureDetector(new MyGestureAdapterListener());
+    private MyGestureDetector detector = new MyGestureDetector(new MyGestureAdapterListener());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +48,20 @@ public class ChampionSelectionActivity extends AppCompatActivity {
         // O código abaixo pega o identificador  do icone blue_champion e seta a imagemView com ele
         int idBlueIcon = this.getResources().getIdentifier("blue_champion_icon", "drawable", ChampionSelectionActivity.this.getPackageName());
 
-//        //==============================================================================
-//        //Setando os icones default nas views dos bans de campeões
-//        //==============================================================================
-//        ImageView imageViewBanBlue1 = (ImageView) findViewById(R.id.championBanBlue1);
-//        imageViewBanBlue1.setImageResource(idBlueIcon);
-//        imageViewBanBlue1.setTag("blue_champion_icon");
-//
-//        ImageView imageViewBanBlue2 = (ImageView) findViewById(R.id.championBanBlue2);
-//        imageViewBanBlue2.setImageResource(idBlueIcon);
-//        imageViewBanBlue2.setTag("blue_champion_icon");
-//
-//        ImageView imageViewBanBlue3 = (ImageView) findViewById(R.id.championBanBlue3);
-//        imageViewBanBlue3.setImageResource(idBlueIcon);
-//        imageViewBanBlue3.setTag("blue_champion_icon");
+        //==============================================================================
+        //Setando os icones default nas views dos bans de campeões
+        //==============================================================================
+        ImageView imageViewBanBlue1 = (ImageView) findViewById(R.id.championBanBlue1);
+        imageViewBanBlue1.setImageResource(idBlueIcon);
+        imageViewBanBlue1.setTag("blue_champion_icon");
+
+        ImageView imageViewBanBlue2 = (ImageView) findViewById(R.id.championBanBlue2);
+        imageViewBanBlue2.setImageResource(idBlueIcon);
+        imageViewBanBlue2.setTag("blue_champion_icon");
+
+        ImageView imageViewBanBlue3 = (ImageView) findViewById(R.id.championBanBlue3);
+        imageViewBanBlue3.setImageResource(idBlueIcon);
+        imageViewBanBlue3.setTag("blue_champion_icon");
 
 
         //==============================================================================
@@ -91,20 +93,20 @@ public class ChampionSelectionActivity extends AppCompatActivity {
         // O código abaixo pega o identificador  do icone red_champion e seta a imagemView com ele
         int idRedIcon = this.getResources().getIdentifier("red_champion_icon", "drawable", ChampionSelectionActivity.this.getPackageName());
 
-//        //==============================================================================
-//        //Setando os icones default nas views dos bans de campeões
-//        //==============================================================================
-//        ImageView imageViewBanRed1 = (ImageView) findViewById(R.id.championBanRed1);
-//        imageViewBanRed1.setImageResource(idRedIcon);
-//        imageViewBanRed1.setTag("red_champion_icon");
-//
-//        ImageView imageViewBanRed2 = (ImageView) findViewById(R.id.championBanRed2);
-//        imageViewBanRed2.setImageResource(idRedIcon);
-//        imageViewBanRed2.setTag("red_champion_icon");
-//
-//        ImageView imageViewBanRed3 = (ImageView) findViewById(R.id.championBanRed3);
-//        imageViewBanRed3.setImageResource(idRedIcon);
-//        imageViewBanRed3.setTag("red_champion_icon");
+        //==============================================================================
+        //Setando os icones default nas views dos bans de campeões
+        //==============================================================================
+        ImageView imageViewBanRed1 = (ImageView) findViewById(R.id.championBanRed1);
+        imageViewBanRed1.setImageResource(idRedIcon);
+        imageViewBanRed1.setTag("red_champion_icon");
+
+        ImageView imageViewBanRed2 = (ImageView) findViewById(R.id.championBanRed2);
+        imageViewBanRed2.setImageResource(idRedIcon);
+        imageViewBanRed2.setTag("red_champion_icon");
+
+        ImageView imageViewBanRed3 = (ImageView) findViewById(R.id.championBanRed3);
+        imageViewBanRed3.setImageResource(idRedIcon);
+        imageViewBanRed3.setTag("red_champion_icon");
 
         //==============================================================================
         // Setando os icones default nas views dos picks de campeões
@@ -221,23 +223,64 @@ public class ChampionSelectionActivity extends AppCompatActivity {
 
             // Criando o intent que irá iniciar a atividade de ChampionSearch
             Intent intent = new Intent(this, ChampionsSearchActivity.class);
-            BUTTON_SELECTED = viewId;
+            setChampionViewSelected(viewId);
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivityForResult(intent, 0);
         }
         else
         // Caso contrário ele vai ser marcado como um campeão para comparações
         {
-            MyCircularImageView imageView = (MyCircularImageView) findViewById(viewId);
-            if (imageView.haveBorder()){
-                imageView.setBorderWidth(0);
+
+            // Caso o ícone seja selecionado seja algum dos ícones de bans entra nesta condicional.
+            // Isso acontece pois as ImageViews são diferentes para cada caso então temos
+            // de tratar isso separadamente
+            if (    view.getId() == R.id.championBanBlue1 ||
+                    view.getId() == R.id.championBanBlue2 ||
+                    view.getId() == R.id.championBanBlue3 ||
+                    view.getId() == R.id.championBanRed1 ||
+                    view.getId() == R.id.championBanRed2 ||
+                    view.getId() == R.id.championBanRed3) {
+
+                ImageView imageView = (ImageView) findViewById(viewId);
+
+                // Verificando se a borda está visível
+                if (imageView.getBackground().isVisible()) {
+
+                    // Se está, deixa invisível.
+                    imageView.getBackground().setVisible(false,true);
+                    imageView.setBackgroundColor(Color.TRANSPARENT);
+                } else {
+
+                    // Se não está, deixa visível.
+                    imageView.getBackground().setVisible(true,true);
+                    imageView.setBackgroundColor(Color.YELLOW);
+                }
+
             }
-            else{
-                imageView.setBorderWidth(2);
+            else {
+
+                MyCircularImageView imageView = (MyCircularImageView) findViewById(viewId);
+                // Verificando se a borda está visível
+                if (imageView.haveBorder()) {
+
+                    // Se está, deixa invisível.
+                    imageView.setBorderWidth(0);
+                } else {
+
+                    // Se não está, deixa visível.
+                    imageView.setBorderWidth(2);
+                }
             }
         }
     }
 
+    private void setChampionViewSelected(int viewId) {
+        championViewIdSelected = viewId;
+    }
+
+    private int getChampionViewSelected() {
+        return championViewIdSelected;
+    }
 
 
     // Método invocado caso o usuário tenha selecionado algum campeão na tela de seleção.
@@ -250,16 +293,40 @@ public class ChampionSelectionActivity extends AppCompatActivity {
             String stringDoChamp = data.getStringExtra(CHAMPION_SELECTED_MESSAGE).toLowerCase();;
             int idChampionIcon = this.getResources().getIdentifier(stringDoChamp, "drawable", R.drawable.class.getPackage().getName());
 
-            // ]Vamos alterar a imagem do campeão de acordo com o código de BUTTON_SELECTED atual
-            MyCircularImageView imageView = (MyCircularImageView) findViewById(BUTTON_SELECTED);
-            imageView.setImageResource(idChampionIcon);
-            imageView.setBorderWidth(2);
-            imageView.setBorderColor(Color.YELLOW);
-            imageView.setTag(stringDoChamp);
+            // Caso o ícone seja selecionado seja algum dos ícones de bans entra nesta condicional.
+            // Isso acontece pois as ImageViews são diferentes para cada caso então temos
+            // de tratar isso separadamente
+            if (    getChampionViewSelected() == R.id.championBanBlue1 ||
+                    getChampionViewSelected() == R.id.championBanBlue2 ||
+                    getChampionViewSelected() == R.id.championBanBlue3 ||
+                    getChampionViewSelected() == R.id.championBanRed1 ||
+                    getChampionViewSelected() == R.id.championBanRed2 ||
+                    getChampionViewSelected() == R.id.championBanRed3){
 
-            Log.d("ChampionSelection", "BUTTON_SELECTED:" + BUTTON_SELECTED);
-            Log.d("ChampionSelection", "Tag selecionada:" + imageView.getTag().toString());
+                ImageView imageView = (ImageView) findViewById(getChampionViewSelected());
+                imageView.setImageResource(idChampionIcon);
 
+                // Setando a borda
+                imageView.setBackgroundColor(Color.YELLOW);
+                imageView.getBackground().setVisible(true,true);
+                imageView.setPadding(2,2,2,2);
+
+                // Adicionando o nome do campeão atual na tag da view
+                imageView.setTag(stringDoChamp);
+            }
+
+            // Caso contrário
+            else {
+                MyCircularImageView imageView = (MyCircularImageView) findViewById(getChampionViewSelected());
+                imageView.setImageResource(idChampionIcon);
+
+                // Setando a borda
+                imageView.setBorderWidth(2);
+                imageView.setBorderColor(Color.YELLOW);
+
+                // Adicionando o nome do campeão atual na tag da view
+                imageView.setTag(stringDoChamp);
+            }
 
             // Quando o usuário escolhe um novo campeão na lista, dispara o evento de sugerir um pick
             suggestChampions();
@@ -269,7 +336,7 @@ public class ChampionSelectionActivity extends AppCompatActivity {
 
     // Este é o método invocado para gerar os campeões sugeridos ao usuário com base nos campeões
     // que ele inseriu nos picks e bans.
-    public void suggestChampions(){
+    protected void suggestChampions(){
 
         // Pegando a view da grid e zerando ela
         GridLayout picksGrid = (GridLayout) findViewById(R.id.picksGrid);
