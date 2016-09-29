@@ -27,28 +27,28 @@ public class ChampionList {
         //==============================================//
         //Adicionando na lista a champion Akali         //
         //==============================================//
-        champion.setName("Akali");
+        champion.setName("akali");
         championCollection.add(champion);
 
         //===============================================//
         //Adicionando na lista a champion Ahri           //
         //===============================================//
         champion = new Champion();
-        champion.setName("Ahri");
+        champion.setName("ahri");
         championCollection.add(champion);
 
         //===============================================//
         //Adicionando na lista a champion Gnar           //
         //===============================================//
         champion = new Champion();
-        champion.setName("Gnar");
+        champion.setName("gnar");
         championCollection.add(champion);
 
         //===============================================//
         //Adicionando na lista a champion Lux            //
         //===============================================//
         champion = new Champion();
-        champion.setName("Lux");
+        champion.setName("lux");
         championCollection.add(champion);
 
 
@@ -56,21 +56,21 @@ public class ChampionList {
         //Adicionando na lista a champion Xerath         //
         //===============================================//
         champion = new Champion();
-        champion.setName("Xerath");
+        champion.setName("xerath");
         championCollection.add(champion);
 
         //===============================================//
         //Adicionando na lista o champion Zilean         //
         //===============================================//
         champion = new Champion();
-        champion.setName("Zilean");
+        champion.setName("zilean");
         championCollection.add(champion);
 
         //===============================================//
         //Adicionando na lista a champion Zyra           //
         //===============================================//
         champion = new Champion();
-        champion.setName("Zyra");
+        champion.setName("zyra");
         championCollection.add(champion);
 
     }
@@ -80,7 +80,6 @@ public class ChampionList {
     }
 
     public static Champion getItem(int index){
-        Log.d("ChampionList", "Retornou o champion:" + championCollection.get(index).getName());
         return championCollection.get(index);
     }
 
