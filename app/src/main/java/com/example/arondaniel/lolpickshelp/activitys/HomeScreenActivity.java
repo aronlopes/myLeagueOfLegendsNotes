@@ -1,4 +1,4 @@
-package com.example.arondaniel.lolpickshelp;
+package com.example.arondaniel.lolpickshelp.Activitys;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,15 +6,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.arondaniel.lolpickshelp.R;
+
 import static android.R.id.message;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
+    // Definindo strings para utilizar de parâmetros na passagem de Intents
     public static final String EXTRA_MESSAGE = "com.example.arondaniel.lolpickshelp";
+    public static final String CHAMPION_NAME = "ChampionName";
+    public static final String CHAMPION_SELECTED_MESSAGE = "ChampionSelected";
 
-    // TAG utilizada nos logs desta activity
+    // TAG utilizada para debug (Log.d)
     private static String TAG = "HomeScreen";
-    public static String CHAMPION_NAME = "ChampionName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,6 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     // Caso o usuário clique no botão "Pick Selection" vamos iniciar esta atividade.
     public void pickSelection(View view){
-        Log.d(TAG, "Entrou no método Pick Selection");
 
         // Criando o intent que irá iniciar a atividade de ChampionSelection
         Intent intent = new Intent(this, ChampionSelectionActivity.class);
@@ -36,7 +39,6 @@ public class HomeScreenActivity extends AppCompatActivity {
 
 
     public void makeANote(View view){
-        Log.d(TAG, "Entrou no método Make a Note");
 
         // Criando o intent que irá iniciar a atividade de makeANote
         Intent intent = new Intent(this, MakeANoteActivity.class);

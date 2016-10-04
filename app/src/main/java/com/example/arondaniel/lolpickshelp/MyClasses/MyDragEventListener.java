@@ -1,4 +1,4 @@
-package com.example.arondaniel.lolpickshelp;
+package com.example.arondaniel.lolpickshelp.MyClasses;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
@@ -14,6 +14,8 @@ import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.example.arondaniel.lolpickshelp.R;
 
 /**
  * Created by AronDaniel on 27/09/2016.
@@ -91,9 +93,6 @@ public class MyDragEventListener implements View.OnDragListener {
                 // Dropped, reassign View to ViewGroup
                 View view = (View) event.getLocalState();
                 ViewGroup owner = (ViewGroup) view.getParent();
-
-//                owner.removeView(view);
-//                GridLayout container = (GridLayout) v;
 
 
                 ImageView imageView;

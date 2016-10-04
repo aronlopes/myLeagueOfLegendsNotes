@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.arondaniel.lolpickshelp.Activitys.ChampionSelectionActivity">
+
+    <GridView
+    android:id="@+id/addChampionCounter_GridView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnWidth="90dp"
+    android:numColumns="auto_fit"
+    android:verticalSpacing="10dp"
+    android:horizontalSpacing="10dp"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addChampionCounter_GridView"
+        android:text="Selecionar"
+        android:onClick="selectChampionsCounter"
+        android:gravity="center"/>
+
+</RelativeLayout>

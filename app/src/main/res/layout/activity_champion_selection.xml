@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context="com.example.arondaniel.lolpickshelp.ChampionSelectionActivity">
+    tools:context="com.example.arondaniel.lolpickshelp.Activitys.ChampionSelectionActivity">
 
 
     <!--=============================================================-->
@@ -109,7 +109,7 @@
     <!--==========================================================-->
     <!--==========================================================-->
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="60dp"
@@ -120,7 +120,7 @@
         app:civ_border="false" />
 
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="60dp"
@@ -131,7 +131,7 @@
         app:civ_border="false" />
 
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="60dp"
@@ -141,7 +141,7 @@
         app:civ_shadow="false"
         app:civ_border="false" />
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="60dp"
@@ -151,7 +151,7 @@
         app:civ_shadow="false"
         app:civ_border="false" />
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="60dp"
@@ -168,7 +168,7 @@
     <!--==============================================================-->
     <!--==============================================================-->
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="450dp"
@@ -179,7 +179,7 @@
         app:civ_border="false" />
 
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="450dp"
@@ -190,7 +190,7 @@
         app:civ_border="false" />
 
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="450dp"
@@ -200,7 +200,7 @@
         app:civ_shadow="false"
         app:civ_border="false" />
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="450dp"
@@ -210,7 +210,7 @@
         app:civ_shadow="false"
         app:civ_border="false" />
 
-    <com.example.arondaniel.lolpickshelp.MyCircularImageView
+    <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="450dp"

@@ -14,7 +14,7 @@ import java.util.List;
  * Created by AronDaniel on 22/09/2016.
  */
 
-public class ChampionList {
+public class ChampionPool {
 
 
 
@@ -75,7 +75,7 @@ public class ChampionList {
 
     }
 
-    public static Collection<Champion> getChampionCollection() {
+    public static ArrayList<Champion> getChampionArrayList() {
         return championCollection;
     }
 

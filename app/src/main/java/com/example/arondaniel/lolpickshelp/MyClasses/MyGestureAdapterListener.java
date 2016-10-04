@@ -1,4 +1,4 @@
-package com.example.arondaniel.lolpickshelp;
+package com.example.arondaniel.lolpickshelp.MyClasses;
 
 import android.util.Log;
 import android.view.GestureDetector;

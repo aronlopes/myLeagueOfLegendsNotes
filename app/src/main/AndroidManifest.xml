@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeScreenActivity">
+        <activity android:name=".Activitys.HomeScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +17,7 @@
         </activity>
 
         <!-- Declaração da atividade de busca (search activity) -->
-        <activity android:name=".ChampionsSearchActivity">
+        <activity android:name=".Activitys.ChampionsSearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -26,9 +26,11 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".ChampionSelectionActivity" />
-        <activity android:name=".MakeANoteActivity" />
-        <activity android:name=".ChampionScreenActivity"></activity>
+        <activity android:name=".Activitys.ChampionSelectionActivity" />
+        <activity android:name=".Activitys.MakeANoteActivity" />
+        <activity android:name=".Activitys.ChampionScreenActivity" />
+        <activity android:name=".Activitys.AddChampionNote" />
+        <activity android:name=".Activitys.AddChampionCounterActivity"></activity>
     </application>
 
 </manifest>

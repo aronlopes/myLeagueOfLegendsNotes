@@ -1,14 +1,9 @@
-package com.example.arondaniel.lolpickshelp;
+package com.example.arondaniel.lolpickshelp.Activitys;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
@@ -17,7 +12,11 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.mikhaellopez.circularimageview.CircularImageView;
+import com.example.arondaniel.lolpickshelp.ChampionPool;
+import com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView;
+import com.example.arondaniel.lolpickshelp.MyClasses.MyGestureAdapterListener;
+import com.example.arondaniel.lolpickshelp.MyClasses.MyGestureDetector;
+import com.example.arondaniel.lolpickshelp.R;
 
 import java.util.Random;
 
@@ -42,7 +41,7 @@ public class ChampionSelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_de_picks);
+        setContentView(R.layout.activity_champion_selection);
 
 
         // O código abaixo pega o identificador  do icone blue_champion e seta a imagemView com ele
@@ -144,19 +143,22 @@ public class ChampionSelectionActivity extends AppCompatActivity {
 
 
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.lanes_array, R.layout.lol_spiner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.lanes_array, R.xml.lol_spiner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        //===============================================================
         // Apply the adapter to the spinner
+        //===============================================================
         spinnerLane1.setAdapter(adapter);
         spinnerLane2.setAdapter(adapter);
         spinnerLane3.setAdapter(adapter);
         spinnerLane4.setAdapter(adapter);
         spinnerLane5.setAdapter(adapter);
 
-
+        //===============================================================
         // Mudando as cores dos textos apresentados no XML
+        //===============================================================
         TextView textYouShouldPick = (TextView) findViewById(R.id.textShouldPick);
         TextView textYouShouldAvoid = (TextView) findViewById(R.id.textShouldAvoid);
 
@@ -274,14 +276,6 @@ public class ChampionSelectionActivity extends AppCompatActivity {
         }
     }
 
-    private void setChampionViewSelected(int viewId) {
-        championViewIdSelected = viewId;
-    }
-
-    private int getChampionViewSelected() {
-        return championViewIdSelected;
-    }
-
 
     // Método invocado caso o usuário tenha selecionado algum campeão na tela de seleção.
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -290,7 +284,7 @@ public class ChampionSelectionActivity extends AppCompatActivity {
         if (resultCode ==  RESULT_OK) {
 
             // Um campeão foi selecionado então iremos atualizar o ícone do campeão
-            String stringDoChamp = data.getStringExtra(CHAMPION_SELECTED_MESSAGE).toLowerCase();;
+            String stringDoChamp = data.getStringExtra(HomeScreenActivity.CHAMPION_SELECTED_MESSAGE).concat("_icon");
             int idChampionIcon = this.getResources().getIdentifier(stringDoChamp, "drawable", R.drawable.class.getPackage().getName());
 
             // Caso o ícone seja selecionado seja algum dos ícones de bans entra nesta condicional.
@@ -355,8 +349,8 @@ public class ChampionSelectionActivity extends AppCompatActivity {
 
             // Pegando a string de um dos campeões selecionados
             Random r = new Random();
-            int randomNumber = r.nextInt(ChampionList.getLenght() - 0);
-            String stringDoChamp = ChampionList.getItem(randomNumber).getName().toLowerCase() + "_icon";
+            int randomNumber = r.nextInt(ChampionPool.getLenght() - 0);
+            String stringDoChamp = ChampionPool.getItem(randomNumber).getName().toLowerCase() + "_icon";
 
             // O código abaixo pega o identificador  do icone da String do campeão selecionado e seta a imagemView com ele
             int championIcon = this.getResources().getIdentifier(stringDoChamp, "drawable", ChampionSelectionActivity.this.getPackageName());
@@ -390,8 +384,8 @@ public class ChampionSelectionActivity extends AppCompatActivity {
 
             // Pegando a string de um dos campeões selecionados
             Random r = new Random();
-            int randomNumber = r.nextInt(ChampionList.getLenght() - 0);
-            String stringDoChamp = ChampionList.getItem(randomNumber).getName().toLowerCase() + "_icon";
+            int randomNumber = r.nextInt(ChampionPool.getLenght() - 0);
+            String stringDoChamp = ChampionPool.getItem(randomNumber).getName().toLowerCase() + "_icon";
 
             // O código abaixo pega o identificador  do icone da String do campeão selecionado e seta a imagemView com ele
             int championIcon = this.getResources().getIdentifier(stringDoChamp, "drawable", ChampionSelectionActivity.this.getPackageName());
@@ -406,6 +400,15 @@ public class ChampionSelectionActivity extends AppCompatActivity {
         }
 
 
+    }
+
+
+    private void setChampionViewSelected(int viewId) {
+        championViewIdSelected = viewId;
+    }
+
+    private int getChampionViewSelected() {
+        return championViewIdSelected;
     }
 
 }

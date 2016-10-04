@@ -1,4 +1,4 @@
-package com.example.arondaniel.lolpickshelp;
+package com.example.arondaniel.lolpickshelp.MyClasses;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -13,16 +13,15 @@ public class MyCircularImageView extends CircularImageView {
 
     private boolean border;
 
-
+    //=================================================================
     //Escrevendo os métodos construtores e mandando para o pai.
+    //=================================================================
     public MyCircularImageView(final Context context) {
         super(context, null);
     }
-
     public MyCircularImageView(Context context, AttributeSet attrs) {
         super(context, attrs, 0);
     }
-
     public MyCircularImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
@@ -43,7 +42,7 @@ public class MyCircularImageView extends CircularImageView {
     }
 
 
-    // Método que retorna verdadeiro caso o item tenha bordar e negativo caso contrário.
+    // Método que retorna verdadeiro caso o item tenha borda e negativo caso contrário.
     public boolean haveBorder (){
         if (border == true)
         {

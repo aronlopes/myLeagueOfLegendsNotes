@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mstb="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_add_champion_note"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/championList_LinearLayout"
+        android:gravity="center">
+
+        <com.example.arondaniel.lolpickshelp.MyClasses.MyCircularImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ahri_icon" />
+
+    </LinearLayout>
+
+
+    <!--==================================================-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time:"
+            android:textSize="30dp"
+            android:layout_gravity="center_vertical"/>
+
+        <org.honorato.multistatetogglebutton.MultiStateToggleButton
+            android:id="@+id/mstb_multi_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            mstb:values="@array/sizeTip"
+            mstb:mstbColorPressedBackground="@color/gray"
+            mstb:mstbPrimaryColor="@color/yellowLegends"
+            mstb:mstbSecondaryColor="@color/white"/>
+
+    </LinearLayout>
+
+    <!--==================================================-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Champion-counter:"
+            android:textSize="30dp"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/add_icon"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:onClick="addChampionCounter"/>
+
+        <GridView
+            android:layout_width="wrap_content"
+            android:id="@+id/addChampionNote_ChampionCounterGrid"
+            android:layout_height="wrap_content"
+            android:numColumns="auto_fit">
+
+        </GridView>
+    </LinearLayout>
+
+
+    <!--==================================================-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mechanics-counter:"
+            android:textSize="30dp"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/add_icon"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter" />
+
+        <GridView
+            android:layout_width="wrap_content"
+            android:id="@+id/addChampionNote_ChampionMechanicGrid"
+            android:layout_height="wrap_content">
+
+        </GridView>
+    </LinearLayout>
+
+    <!--==================================================-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score:"
+            android:textSize="30dp"/>
+
+        <RatingBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numStars="10"
+            android:id="@+id/ratingBar" />
+
+    </LinearLayout>
+
+
+    <!--==================================================-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coment:"
+        android:textSize="30dp"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write here"/>
+
+
+
+</LinearLayout>
+
+
+
+

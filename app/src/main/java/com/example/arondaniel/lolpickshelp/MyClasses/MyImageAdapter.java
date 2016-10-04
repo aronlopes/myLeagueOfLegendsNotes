@@ -1,41 +1,50 @@
-package com.example.arondaniel.lolpickshelp;
+package com.example.arondaniel.lolpickshelp.MyClasses;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
+
+import com.example.arondaniel.lolpickshelp.Champion;
+import com.example.arondaniel.lolpickshelp.ChampionPool;
+import com.example.arondaniel.lolpickshelp.R;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Created by AronDaniel on 21/09/2016.
  */
-public class ImageAdapter extends BaseAdapter {
+public class MyImageAdapter extends BaseAdapter {
     private Context context;
+    private ArrayList<Champion> championPool;
 
-    public ImageAdapter(Context c) {
+    public MyImageAdapter(Context c) {
         context = c;
+        championPool = ChampionPool.getChampionArrayList();
+    }
+
+    public MyImageAdapter(Context c, ArrayList<Champion> championList) {
+        context = c;
+        championPool = championList;
     }
 
     public int getCount() {
-        return ChampionList.getLenght();
+        return championPool.size();
     }
 
     public Object getItem(int position) {
-        return ChampionList.getItem(position);
+        return championPool.get(position);
     }
 
     public long getItemId(int position) {
 
-        String stringDoIcone = ChampionList.getItem(position).getName().toString() + "_icon";
+        String stringDoIcone = championPool.get(position).getName().toString() + "_icon";
 
         int identificador = context.getResources().getIdentifier(stringDoIcone.toLowerCase(), "drawable", R.drawable.class.getPackage().getName());
 
-//        Log.d("ImageAdapter", "ChampionList valor:" + identificador);
-//        Log.d("ImageAdapter", "mThumbIds valor:" + mThumbIds[position].longValue());
         return identificador;
 
     }
@@ -47,7 +56,7 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(context);
-            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+            imageView.setLayoutParams(new GridView.LayoutParams(120, 120));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
         } else {
@@ -55,7 +64,7 @@ public class ImageAdapter extends BaseAdapter {
         }
 
         // O código abaixo pega o identificador  do icone de cada campeão
-        String stringDoIcone = ChampionList.getItem(position).getName().toString() + "_icon";
+        String stringDoIcone = championPool.get(position).getName().toString() + "_icon";
 
         int identificador = context.getResources().getIdentifier(stringDoIcone.toLowerCase(), "drawable", R.drawable.class.getPackage().getName());
 
